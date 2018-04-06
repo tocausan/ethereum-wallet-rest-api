@@ -2,7 +2,8 @@
 
 ## Description
 Ethereum wallet API using the (ethersJs)[https://docs.ethers.io/ethers.js/html/] library and
- (express-es6-rest-api)[https://github.com/developit/express-es6-rest-api] API boilerplate.
+ (express-es6-rest-api)[https://github.com/developit/express-es6-rest-api] API boilerplate. <br>
+(Ropsten)[https://ropsten.etherscan.io] is used as default test provider.
 
 ## Routes
 ```text
