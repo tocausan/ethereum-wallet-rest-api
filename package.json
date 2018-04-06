@@ -1,6 +1,6 @@
 {
-  "name": "express-es6-rest-api",
-  "version": "0.3.0",
+  "name": "express-es6-rest-api.test-keyrock",
+  "version": "1.0.0",
   "description": "Starter project for an ES6 RESTful Express API",
   "main": "dist",
   "scripts": {
@@ -17,23 +17,27 @@
       "sourceType": "module"
     },
     "env": {
-      "node": true
+      "node": true,
+      "es6": true
     },
     "rules": {
       "no-console": 0,
       "no-unused-vars": 1
     }
   },
-  "repository": "developit/express-es6-rest-api",
-  "author": "Jason Miller <jason@developit.ca>",
+  "repository": "Ethereum wallet",
+  "author": "tocausan",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
     "cors": "^2.7.1",
+    "ethers": "^3.0.8",
     "express": "^4.13.3",
+    "lodash": "^4.17.5",
     "morgan": "^1.8.0",
-    "resource-router-middleware": "^0.6.0"
+    "resource-router-middleware": "^0.6.0",
+    "web3": "github:ethereum/web3.js"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

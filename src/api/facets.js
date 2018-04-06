@@ -23,7 +23,7 @@ export default ({ config, db }) => resource({
 	/** POST / - Create a new entity */
 	create({ body }, res) {
 		body.id = facets.length.toString(36);
-		facets.push(body);
+        facets.push(body);
 		res.json(body);
 	},
 
@@ -44,7 +44,7 @@ export default ({ config, db }) => resource({
 
 	/** DELETE /:id - Delete a given entity */
 	delete({ facet }, res) {
-		facets.splice(facets.indexOf(facet), 1);
+        facets.splice(facets.indexOf(facet), 1);
 		res.sendStatus(204);
 	}
 });

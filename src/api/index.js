@@ -1,6 +1,9 @@
-import {version} from '../../package.json';
+import {version, name, description} from '../../package.json';
 import {Router} from 'express';
 import facets from './facets';
+import wallets from './wallets';
+import balances from './balances';
+import transactions from './transactions';
 
 export default ({config, db}) => {
     let api = Router();
@@ -10,27 +13,17 @@ export default ({config, db}) => {
 
     // perhaps expose some API metadata at the root
     api.get('/', (req, res) => {
-        res.json({version});
+        res.json({version, name, description});
     });
 
-    api.get('/createWallet', (req, res) => {
-        // Generates a new Ethereum wallet and return and
-        // object with the private
-        // key and the public ETH address
-        res.json({});
-    });
+    // wallets ressources
+    api.use('/createWallet', wallets({config, db}));
 
-    api.get('/getBalance/:param', (req, res) => {
-        // Get the balance of an ethereum address
-        res.json({version});
-    });
+    // balances ressources
+    api.use('/getBalance', balances({config, db}));
 
-    api.post('/transaction', (req, res) => {
-        // {privateKey, destination, amount} Creates a transaction to send ETH from one address to another.
-        // It can receive 3 raw JSON params: privateKey of the source ETH address,
-        // destination is the ETH destination address and amount the number of ETH to be send.
-        res.json({version});
-    });
+    // transactions ressources
+    api.use('/transaction', transactions({config, db}));
 
     return api;
 }
