@@ -17,7 +17,7 @@ POST    /api/transaction                    Create a transaction, requires {priv
 ## installation
 ```text
 # clone this repo
-git clone git@github.com:tocausan/Ethereum-wallet-API.git
+git clone git@github.com:tocausan/ethereum-wallet-rest-api.git
 
 # install modules
 npm install
