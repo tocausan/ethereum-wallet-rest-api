@@ -29,5 +29,4 @@ export default ({config, db}) => {
 
         // transactions ressources
         .use('/transaction', transactions({config, db}));
-
 }
