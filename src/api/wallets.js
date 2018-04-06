@@ -1,6 +1,5 @@
 import resource from 'resource-router-middleware';
 import {Wallet} from "ethers";
-import wallets from '../models/wallets'
 
 export default ({config, db}) => resource({
 
@@ -11,9 +10,7 @@ export default ({config, db}) => resource({
      *  Errors terminate the request, success sets `req[privateKey] = data`.
      */
     load(req, privateKey, callback) {
-        const walletsResult = wallets.find(wallet => wallet.privateKey === privateKey),
-            ethersResult = new Wallet(privateKey),
-            wallet = walletsResult ? walletsResult : ethersResult,
+        const wallet = new Wallet(privateKey),
             err = wallet ? null : {error: 'not found'};
         callback(err, wallet);
     },
@@ -26,31 +23,12 @@ export default ({config, db}) => resource({
 
         // create a random wallet using ethers
         const wallet = Wallet.createRandom();
-        // store it in wallets models
-        wallets.push(wallet);
-        // check your console to get all created wallets
-        console.log(wallets);
         res.json(wallet);
     },
 
     /** GET /:address */
     read({wallet}, res) {
         res.json(wallet);
-    },
-
-    /** PUT /:address */
-    update({wallet, body}, res) {
-        for (let key in body) {
-            if (key !== 'id') {
-                wallet[key] = body[key];
-            }
-        }
-        res.sendStatus(204);
-    },
-
-    /** DELETE /:address */
-    delete({wallet}, res) {
-        wallets.splice(wallets.indexOf(wallet), 1);
-        res.sendStatus(204);
     }
+
 });
