@@ -14,7 +14,7 @@ export default ({config, db}) => resource({
             .getBalance(address)
             .then(balance => {
                 const err = balance ? null : {error: 'not found'};
-                callback(null, balance);
+                callback(err, balance);
             })
             .catch(e => {
                 callback(JSON.parse(e.responseText).error, null);
