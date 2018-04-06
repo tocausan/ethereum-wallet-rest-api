@@ -32,6 +32,5 @@ export default ({config, db}) => resource({
         // Get the balance of an ethereum address
         // toNumber() -> ether bug => toString() instead
         res.json({balance: balance.toString()});
-    },
-
+    }
 });
