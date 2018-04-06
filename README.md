@@ -1,4 +1,4 @@
-# Ethereum wallet API
+# Ethereum wallet RESTful API
 
 ## Description
 Ethereum wallet API using the [ethersJs](https://docs.ethers.io/ethers.js/html) library and
