@@ -30,5 +30,4 @@ export default ({config, db}) => resource({
             res.json({error: 'missing parameter'});
         }
     }
-
 });
