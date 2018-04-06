@@ -1,7 +1,7 @@
 {
-  "name": "express-es6-rest-api.test-keyrock",
+  "name": "Ethereum-wallet-API",
   "version": "1.0.0",
-  "description": "Starter project for an ES6 RESTful Express API",
+  "description": "Ethereum wallet API using the ethersJs library and express-es6-rest-api boilerplate",
   "main": "dist",
   "scripts": {
     "dev": "nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
@@ -25,7 +25,7 @@
       "no-unused-vars": 1
     }
   },
-  "repository": "Ethereum wallet",
+  "repository": "Ethereum wallet API",
   "author": "tocausan",
   "license": "MIT",
   "dependencies": {
@@ -36,8 +36,7 @@
     "express": "^4.13.3",
     "lodash": "^4.17.5",
     "morgan": "^1.8.0",
-    "resource-router-middleware": "^0.6.0",
-    "web3": "github:ethereum/web3.js"
+    "resource-router-middleware": "^0.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
