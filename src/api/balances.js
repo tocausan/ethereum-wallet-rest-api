@@ -1,11 +1,5 @@
 import resource from 'resource-router-middleware';
-import {Wallet, providers} from "ethers";
-
-const getBalance = (wallet) => {
-    const w = new Wallet(wallet.privateKey);
-    w.provider = providers.getDefaultProvider();
-    return w.getBalance();
-};
+import {providers} from "ethers";
 
 export default ({config, db}) => resource({
 
