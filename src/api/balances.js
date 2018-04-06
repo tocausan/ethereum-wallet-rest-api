@@ -23,7 +23,7 @@ export default ({config, db}) => resource({
                 callback(null, balance);
             })
             .catch(e => {
-                callback(JSON.parse(e.responseText), null);
+                callback(JSON.parse(e.responseText).error, null);
             })
     },
 
