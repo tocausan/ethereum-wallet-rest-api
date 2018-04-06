@@ -12,6 +12,5 @@ export default ({config, db}) => resource({
         // create a random wallet using ethers
         const wallet = Wallet.createRandom();
         res.json(wallet);
-    },
-
+    }
 });
